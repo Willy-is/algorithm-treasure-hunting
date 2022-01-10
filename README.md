@@ -19,16 +19,16 @@ There are two cases:
 
 1. Select the left box </br>
    When Alex selects the left box, Cindy has two choices ([i+1] || [j]). She will pick a box that leaves Alex with the minimum value as she is assumed to make an optimal decision.</br>
-   Therefore, Alex will have a value of **[i] + Min(P(i+2, j), P(i+1, j-1))**.
+   Therefore, Alex will have a value of ``[i] + Min(P(i+2, j), P(i+1, j-1))``.
    <img width="500" alt="alex-left-choice" src="https://user-images.githubusercontent.com/57608628/148709954-710ff496-e39d-4228-bcbb-af958683d6b1.png">
 
 2. Select the right box </br>
    When Alex chooses the right box, once again, Cindy has two options ([i] || [j-1])and will leave him with the minimum value. </br>
-   In this case, Alex will have a value of **[j] + Min(P(i+1, j-1), P(i, j-2))**.
+   In this case, Alex will have a value of ``[j] + Min(P(i+1, j-1), P(i, j-2))``.
    <img width="500" alt="alex-right-choice" src="https://user-images.githubusercontent.com/57608628/148709957-a2b18a45-e8d3-4e7b-bb9f-43a5ea11c44b.png">
 
-<br> As Alex is always looking for the bigger value, his value would be **Max([i] + Min(P(i+2, j), P(i+1, j-1)), [j] + Min(P(i+1, j-1), P(i, j-2)))** </br>
-For example, if there are (6,4,3,5) coins in each box:
+<br> As Alex is always looking for the bigger value, his value would be: <br>``Max([i] + Min(P(i+2, j), P(i+1, j-1)), [j] + Min(P(i+1, j-1), P(i, j-2)))`` </br>
+For example, if there are (6,4,3,5) coins in each box: <br>
 P(0, 3) = Max(6 + Min(P(2, 3), P(1, 2)), 5 + Min(P(1, 2), P(0, 1)) = Max(6 + 4, 5 + 4) = 10.
 
 ### Base case:
